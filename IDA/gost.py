@@ -31,7 +31,7 @@ def find_pcln_table():
             pcln_ea = ida_search.find_binary(start_ea, end_ea, pcln_magic, 16, ida_search.SEARCH_DOWN)
             if pcln_ea == ida_idaapi.BADADDR:
                 print("No pcln found, move to next segment...")
-                continue
+                break
                 
             print("Found potential pcln table @ %08x" % (pcln_ea))
             
